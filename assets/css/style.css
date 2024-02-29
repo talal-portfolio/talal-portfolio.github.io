@@ -21717,19 +21717,37 @@ body.white-version {
 
 /*# sourceMappingURL=../maps/style.css.map */
 
-.skill-title {
+/* .skill-title {
   font-size: 9px !important;
-  color: #cfcdcd  !important;
-  margin-top: -19px  !important;
-  margin-bottom: 15%  !important;
-  font-weight: 500  !important;
-  padding: 2%  !important;
+  color: #cfcdcd !important;
+  margin-top: -19px !important;
+  margin-bottom: 15% !important;
+  font-weight: 500 !important;
+  padding: 2% !important;
 }
 
 .sec-skill-title {
-  font-size: 7px  !important;
-  color: #cfcdcd  !important;
-  margin-top: -9px  !important;
-  font-weight: 400  !important;
-  padding: 2%  !important;
+  font-size: 7px !important;
+  color: #cfcdcd !important;
+  margin-top: -9px !important;
+  font-weight: 400 !important;
+  padding: 2% !important;
+} */
+
+
+.image-container p {
+  font-size: 9px !important;
+  color: #cfcdcd !important;
+  margin-top: -19px !important;
+  margin-bottom: 15% !important;
+  font-weight: 500 !important;
+  padding: 2% !important;
+}
+
+.sec-image-container p {
+  font-size: 7px !important;
+  color: #cfcdcd !important;
+  margin-top: -9px !important;
+  font-weight: 400 !important;
+  padding: 2% !important;
 }
