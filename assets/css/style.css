@@ -21718,18 +21718,18 @@ body.white-version {
 /*# sourceMappingURL=../maps/style.css.map */
 
 .skill-title {
-  font-size: 9px;
-  color: #cfcdcd;
-  margin-top: -19px;
-  margin-bottom: 15%;
-  font-weight: 500;
-  padding: 2%;
+  font-size: 9px !important;
+  color: #cfcdcd  !important;
+  margin-top: -19px  !important;
+  margin-bottom: 15%  !important;
+  font-weight: 500  !important;
+  padding: 2%  !important;
 }
 
 .sec-skill-title {
-  font-size: 7px;
-  color: #cfcdcd;
-  margin-top: -9px;
-  font-weight: 400;
-  padding: 2%;
+  font-size: 7px  !important;
+  color: #cfcdcd  !important;
+  margin-top: -9px  !important;
+  font-weight: 400  !important;
+  padding: 2%  !important;
 }
