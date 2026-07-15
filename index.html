@@ -1,691 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home Freelancer || Talal's - Personal Portfolio Template</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/profile.png">
-    <!-- CSS 
-    ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/aos.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talal Ahmed | Shopify App Developer & Laravel Developer</title>
+<meta name="description" content="Talal Ahmed is a software engineer with 7+ years of experience in Shopify app development, Laravel, React, and Vue.js. Explore projects, experience, and get in touch.">
+<meta name="keywords" content="Talal Ahmed, Shopify App Developer, Laravel Developer, React Developer, Vue Developer">
+<meta name="author" content="Talal Ahmed">
+<link rel="canonical" href="https://talal-portfolio.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talal Ahmed | Shopify App Developer & Laravel Developer">
+<meta property="og:description" content="software engineer with 7+ years of experience in Shopify app development, Laravel, React, and Vue.js.">
+<meta property="og:url" content="https://talal-portfolio.github.io/">
+<meta property="og:image" content="https://talal-portfolio.github.io/assets/images/og-cover.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Talal Ahmed | Shopify App Developer & Laravel Developer">
+<meta name="twitter:description" content="software engineer with 7+ years of experience in Shopify app development, Laravel, React, and Vue.js.">
+<meta name="twitter:image" content="https://talal-portfolio.github.io/assets/images/og-cover.jpg">
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Talal Ahmed",
+  "url": "https://talal-portfolio.github.io/",
+  "jobTitle": "Shopify App Developer & Laravel Developer",
+  "knowsAbout": ["Shopify App Development", "Laravel", "React", "Vue.js", "PHP", "CodeIgniter", "Inertia.js", "GraphQL"],
+  "sameAs": [
+    "https://www.linkedin.com/in/techpro-talal/",
+    "https://github.com/ChTalalJamil"
+  ]
+}
+</script>
+
+<link rel="icon" type="image/png" href="assets/images/profile.png">
+<link rel="apple-touch-icon" href="assets/images/profile.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12141a;
+    --panel:#1b1e27;
+    --panel-2:#20242f;
+    --paper:#edeae3;
+    --muted:#8891a3;
+    --brass:#c98a46;
+    --brass-dim:#9c6c37;
+    --line:#2a2f3b;
+    --good:#7fae92;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  ::selection{background:var(--brass); color:var(--ink);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+
+  /* NAV */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    backdrop-filter:blur(10px);
+    background:rgba(18,20,26,0.75);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:var(--maxw); margin:0 auto;}
+  .brand{font-family:'Space Grotesk'; font-weight:700; font-size:1.05rem; color:var(--paper);}
+  .brand span{color:var(--brass);}
+  .navlinks{display:flex; align-items:center; gap:32px;}
+  .navlinks a{
+    font-size:0.88rem; color:var(--muted); font-family:'JetBrains Mono'; position:relative; transition:color .2s;
+  }
+  .navlinks a:hover{color:var(--paper);}
+  .navlinks a:not(.resume-btn)::after{
+    content:''; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--brass); transition:width .25s;
+  }
+  .navlinks a:not(.resume-btn):hover::after{width:100%;}
+  .navlinks .resume-btn{
+    color:var(--brass); border:1px solid var(--brass-dim); padding:6px 14px; border-radius:2px;
+  }
+  .navlinks .resume-btn:hover{background:var(--brass); color:var(--ink);}
+  .menu-toggle{display:none; background:none; border:none; color:var(--paper); font-size:1.5rem; cursor:pointer;}
+
+  @media (max-width:760px){
+    .navlinks{
+      position:fixed; top:64px; right:-100%; height:calc(100vh - 64px); width:220px;
+      background:var(--panel); flex-direction:column; align-items:flex-start; padding:32px 24px; gap:24px; transition:right .3s;
+      border-left:1px solid var(--line);
+    }
+    .navlinks.open{right:0;}
+    .menu-toggle{display:block;}
+  }
+
+  /* HERO */
+  .hero{ position:relative; min-height:100vh; display:flex; align-items:center; padding-top:64px; overflow:hidden; }
+  #hero-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:0.55; }
+  .hero-content{position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; padding:0 32px; width:100%;}
+  .eyebrow{
+    font-family:'JetBrains Mono'; color:var(--brass); font-size:0.85rem; letter-spacing:0.06em;
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:28px; height:1px; background:var(--brass);}
+  .hero h1{font-size:clamp(2.4rem, 6vw, 4.4rem); line-height:1.05; max-width:820px;}
+  .hero h1 .accent{color:var(--brass);}
+  .hero p{color:var(--muted); font-size:1.15rem; max-width:580px; margin-top:24px;}
+  .hero-cta{display:flex; gap:18px; margin-top:38px; flex-wrap:wrap;}
+  .btn{
+    padding:13px 26px; border-radius:2px; font-family:'JetBrains Mono'; font-size:0.9rem; transition:all .2s;
+    display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer;
+  }
+  .btn-primary{background:var(--brass); color:var(--ink); font-weight:500;}
+  .btn-primary:hover{background:#dba25e;}
+  .btn-ghost{border:1px solid var(--line); color:var(--paper); background:transparent;}
+  .btn-ghost:hover{border-color:var(--brass); color:var(--brass);}
+
+  /* SECTION shared */
+  section{padding:120px 0;}
+  .section-head{display:flex; align-items:baseline; gap:18px; margin-bottom:20px;}
+  .section-num{font-family:'JetBrains Mono'; color:var(--brass); font-size:0.95rem;}
+  .section-head h2{font-size:2rem;}
+  .section-line{flex:1; height:1px; background:var(--line);}
+  .section-sub{color:var(--muted); font-size:0.98rem; max-width:680px; margin-bottom:48px;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:64px; align-items:start;}
+  .about-text p{color:var(--muted); margin-bottom:18px; font-size:1.02rem;}
+  .about-text strong{color:var(--paper); font-weight:600;}
+  .facts{display:flex; flex-direction:column; gap:0; border:1px solid var(--line); border-radius:4px; overflow:hidden;}
+  .fact{display:flex; justify-content:space-between; gap:12px; padding:16px 20px; border-bottom:1px solid var(--line); font-size:0.92rem;}
+  .fact:last-child{border-bottom:none;}
+  .fact span:first-child{color:var(--muted); font-family:'JetBrains Mono'; white-space:nowrap;}
+  .fact span:last-child{color:var(--paper); font-weight:500; text-align:right;}
+
+  /* SKILLS */
+  .skill-groups{display:grid; grid-template-columns:repeat(2, 1fr); gap:28px;}
+  .skill-group{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:24px 26px;}
+  .skill-group h4{font-family:'JetBrains Mono'; font-size:0.85rem; color:var(--brass); font-weight:500; margin-bottom:16px; letter-spacing:0.03em;}
+  .pills{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    font-size:0.85rem; padding:6px 13px; border:1px solid var(--line); border-radius:20px; color:var(--paper);
+    background:var(--panel-2); transition:border-color .2s, color .2s;
+  }
+  .pill:hover{border-color:var(--brass); color:var(--brass);}
+
+  @media (max-width:760px){ .about-grid, .skill-groups{grid-template-columns:1fr;} }
+
+  /* EXPERIENCE timeline */
+  .timeline{position:relative; padding-left:32px;}
+  .timeline::before{content:''; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background:var(--line);}
+  .tl-item{position:relative; padding-bottom:52px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:''; position:absolute; left:-32px; top:4px; width:11px; height:11px; border-radius:50%;
+    background:var(--ink); border:2px solid var(--brass);
+  }
+  .tl-date{font-family:'JetBrains Mono'; color:var(--muted); font-size:0.85rem; margin-bottom:6px;}
+  .tl-item h3{font-size:1.15rem; margin-bottom:4px;}
+  .tl-item .role-co{color:var(--brass); font-size:0.95rem; margin-bottom:10px; display:block;}
+  .tl-item p{color:var(--muted); max-width:680px; font-size:0.96rem; margin-bottom:10px;}
+  .tl-link{color:var(--brass); font-family:'JetBrains Mono'; font-size:0.85rem; display:inline-block; margin-top:6px;}
+  .tl-link:hover{text-decoration:underline;}
+
+  /* PROJECTS */
+  .work-group{margin-bottom:64px;}
+  .work-group:last-child{margin-bottom:0;}
+  .work-group-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:10px;}
+  .work-group-head h3{font-size:1.15rem; color:var(--paper);}
+  .work-group-tag{font-family:'JetBrains Mono'; font-size:0.78rem; color:var(--good); background:rgba(127,174,146,0.1); padding:4px 10px; border-radius:3px;}
+  .work-group-note{color:var(--muted); font-size:0.9rem; margin-bottom:28px; max-width:680px;}
+
+  .projects-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;}
+  .projects-grid.cols-2{grid-template-columns:repeat(2, 1fr);}
+  .project-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px;
+    transition:transform .25s, border-color .25s; display:flex; flex-direction:column; height:100%;
+  }
+  .project-card:hover{transform:translateY(-4px); border-color:var(--brass-dim);}
+  .project-icon{margin-bottom:16px;}
+  .project-icon svg{width:44px; height:44px;}
+  .project-card .top-row{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; gap:10px;}
+  .project-card h4{font-size:1.05rem; color:var(--paper); font-family:'Space Grotesk'; font-weight:600;}
+  .project-card .links a{color:var(--good); font-family:'JetBrains Mono'; font-size:0.8rem; white-space:nowrap; transition:color .2s;}
+  .project-card .links a:hover{color:var(--brass);}
+  .project-card p{color:var(--muted); font-size:0.9rem; flex:1; margin-bottom:16px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{font-family:'JetBrains Mono'; font-size:0.75rem; color:var(--brass); background:rgba(201,138,70,0.08); padding:4px 9px; border-radius:3px;}
+
+  @media (max-width:900px){ .projects-grid{grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width:640px){ .projects-grid, .projects-grid.cols-2{grid-template-columns:1fr;} }
+
+  /* CONTACT */
+  .contact-box{
+    text-align:center; padding:80px 40px; background:var(--panel); border:1px solid var(--line); border-radius:8px;
+    position:relative; overflow:hidden;
+  }
+  .contact-box h2{font-size:clamp(1.8rem, 4vw, 2.6rem); margin-bottom:18px;}
+  .contact-box p{color:var(--muted); max-width:480px; margin:0 auto 32px;}
+  .socials{display:flex; justify-content:center; gap:28px; margin-top:44px; flex-wrap:wrap;}
+  .socials a{color:var(--muted); font-family:'JetBrains Mono'; font-size:0.9rem; transition:color .2s;}
+  .socials a:hover{color:var(--brass);}
+
+  footer{text-align:center; padding:32px; color:var(--muted); font-family:'JetBrains Mono'; font-size:0.8rem; border-top:1px solid var(--line);}
+</style>
 </head>
+<body>
 
+<header>
+  <nav>
+    <a href="#" class="brand">talal<span>.</span>dev</a>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
+      <a href="docs/resume.pdf" class="resume-btn" download="Talal_Ahmed_Resume.pdf">resume</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
 
-<body class="template-color-1 home-sticky spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="150">
-    <main class="main-page-wrapper">
-        <!-- start slider area -->
-        <div class="rn-slider-area">
-            <div class="container">
-                <div class="row row--30 pt--100 pt_sm--50">
-                    <div class="col-lg-6">
-                        <div class="d-flex flex-wrap align-content-start h-100">
-                            <div class="sticky-top-slider position-sticky sticky-top rbt-sticky-top-adjust-two">
-                                <div class="banner-details-wrapper-sticky slide">
-                                    <div class="thumbnail">
-                                        <img src="assets/images/user.jpg" alt="Personal Portfolio">
-                                    </div>
-                                    <div class="banner-title-area pt--30">
-                                        <h1 class="title">Hi, I’m <span>Talal</span><br><span class="span"> Software
-                                                Engineer.</span></h1>
-                                        <p class="disc">
-                                            A highly motivated software engineer with over four years of experience
-                                            in the tech industry.
-                                            I possess a strong drive to stay up-to-date with the latest tech stack and
-                                            enjoy exploring innovative development methods.
-                                            My philosophy is centered around continual self-improvement and skill
-                                            development. As such, I aim to enhance my abilities and deliver quality
-                                            results through dedicated hard work and honesty.
-                                            Thank you for taking the time to visit my profile.
-                                        </p>
-                                    </div>
-                                    <div class="button-group text-center text-md-left pt--60 pt_md--40 pt_sm--40">
-                                        <a class="rn-btn" href="docs/resume_talal.pdf"
-                                            target="_blank"><span>Resume</span></a>
-                                        <!-- <a class="rn-btn" href="#contacts"><span>Hire Me</span></a> -->
-                                    </div>
-                                    <!-- social sharea area -->
-                                    <div class="social-share-style-1 mt--40">
-                                        <span class="title">find me</span>
-                                        <ul class="social-share d-flex liststyle">
-                                            <li class="linkedin">
-                                                <a href="https://www.linkedin.com/in/techpro-talal/" target="_blank">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                        class="feather feather-linkedin">
-                                                        <path
-                                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                                        </path>
-                                                        <rect x="2" y="9" width="4" height="12"></rect>
-                                                        <circle cx="4" cy="4" r="2"></circle>
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <!-- <li class="instagram">
-                                                <a href="https://www.instagram.com/iam_talal_j/" target="_blank">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                        class="feather feather-instagram">
-                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
-                                                        </path>
-                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                                    </svg>
-                                                </a>
-                                            </li> -->
-                                            <li class="github">
-                                                <a href="https://github.com/ChTalalJamil" target="_blank">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                                                        viewBox="0 0 100 100">
-                                                        <g stroke="none" fill="currentColor">
-                                                            <path
-                                                                d="M 49.354839,0 C 21.391129,0 0,21.773859 0,50.454146 c 0,22.931822 14.072581,42.555177 34.173387,49.461605 2.580645,0.475589 3.487903,-1.157964 3.487903,-2.50203 0,-1.282031 -0.06048,-8.353883 -0.06048,-12.696248 0,0 -14.112903,3.10169 -17.076612,-6.162022 0,0 -2.298388,-6.017278 -5.604839,-7.568122 0,0 -4.616936,-3.246435 0.32258,-3.184401 0,0 5.020162,0.413558 7.782259,5.334905 4.415322,7.981681 11.814516,5.686431 14.69758,4.321687 0.46371,-3.308468 1.774194,-5.603718 3.225807,-6.968462 -11.270162,-1.282031 -22.641129,-2.956943 -22.641129,-22.849111 0,-5.68643 1.532258,-8.539984 4.758064,-12.1793 -0.524193,-1.344065 -2.237903,-6.88575 0.524194,-14.040313 4.213709,-1.344065 13.91129,5.583041 13.91129,5.583041 4.032258,-1.157964 8.366935,-1.757624 12.66129,-1.757624 4.294355,0 8.629033,0.59966 12.661291,1.757624 0,0 9.69758,-6.947784 13.91129,-5.583041 2.762097,7.175241 1.048387,12.696248 0.524194,14.040313 3.225806,3.659994 5.201612,6.513548 5.201612,12.1793 0,19.954201 -11.875,21.546402 -23.145161,22.849111 1.854839,1.633557 3.427419,4.735246 3.427419,9.594559 0,6.968462 -0.06048,15.591158 -0.06048,17.286749 0,1.344065 0.927419,2.977624 3.487903,2.502029 C 86.330645,93.009323 100,73.385968 100,50.454146 100,21.773859 77.318548,0 49.354839,0 Z">
-                                                            </path>
-                                                        </g>
-                                                    </svg>
-                                                </a>
-                                            </li>
-                                            <li class="gmail">
-                                                <a class="hover:text-primary-3 hover:dark:text-primary-7 transition-colors"
-                                                    href="mailto:talal.techpro@gmail.com" target="_blank"
-                                                    rel="noreferrer" aria-label="Send email">
-                                                    <div class="opacity-100 w-full h-full"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="100%"
-                                                            height="100%" viewBox="0 96 100 80">
-                                                            <g stroke="none" fill="currentColor">
-                                                                <path
-                                                                    d="m 7.5,176 q -3,0 -5.25,-2.25 Q 0,171.5 0,168.5 v -65 q 0,-3 2.25,-5.25 Q 4.5,96 7.5,96 h 85 q 3,0 5.25,2.25 2.25,2.25 2.25,5.25 v 65 q 0,3 -2.25,5.25 Q 95.5,176 92.5,176 Z M 50,138.25 7.5,110.375 V 168.5 h 85 v -58.125 z m 0,-7.5 42,-27.25 H 8.125 Z M 7.5,110.375 v -6.875 65 z">
-                                                                </path>
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- end -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="sticky-home-wrapper">
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="eyebrow">TALAL AHMED · SHOPIFY APP DEVELOPER · LARAVEL DEVELOPER</div>
+    <h1>I build the systems<br>behind the <span class="accent">business.</span></h1>
+    <p>7+ years designing and shipping Shopify apps, CRMs, and SaaS platforms with Laravel, Vue and React — turning messy operational workflows into software that just works.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View my work →</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
 
-                            <div class="rn-about-area section-height">
-                                <div class="inner">
-                                    <h5 class="title">
-                                        About Me
-                                    </h5>
-                                    <p class="about-disc">
-                                        Greeting, </br>
-                                        As a seasoned full-stack developer with extensive expertise in PHP and
-                                        JavaScript frameworks and libraries,</br>
-                                        I bring a wealth of experience to the table.
-                                        Holding a degree in <strong> Computer Science </strong> obtained in February
-                                        2019,
-                                        I am deeply passionate about tackling intricate challenges head-on and
-                                        delivering tailored solutions
-                                        that exceed expectations. My proficiency extends to developing
-                                        <strong> Shopify
-                                            Apps</strong>, alongside crafting
-                                        <strong>CRM</strong>, <strong>ERP</strong>, and <strong>intricate management
-                                            systems</strong> for diverse organizations.
-                                    </p>
-                                    <p class="about-disc">
-                                        I thrive on collaborating with teams to enhance existing projects and address
-                                        any issues that may arise.
-                                        Feel free to reach out to me via message or email
-                                        I'm always eager to lend my expertise.
-                                        I have three years of experience with HTML, CSS, JavaScript. And I can Design
-                                        Your
-                                        web application.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- about area end -->
+<div class="wrap">
 
-                            <!-- Start skiull area -->
-                            <div class="rn-skill-area section-height">
-                                <div class="inner slide">
-                                    <h5 class="title">
-                                        Skill
-                                    </h5>
-                                    <div class="skill-share-inner pt--100">
-                                        <span class="title">Primary Skills on</span>
-                                        <ul class="skill-share d-flex liststyle">
+  <section id="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid" style="margin-top:40px;">
+      <div class="about-text">
+        <p>I'm a software engineer with <strong>7+ years</strong> of experience building web applications and e-commerce solutions. My core stack is <strong>PHP (Laravel, CodeIgniter)</strong> on the backend, paired with <strong>Vue.js, React, and Inertia.js</strong> on the front end.</p>
+        <p>I currently split my time between two Shopify-focused roles: leading app development at <strong>Misk Logics Apps</strong>, a product-based Shopify app company, and building custom + public apps as a <strong>Shopify App Developer at SwishTag</strong>. Between the two, I've shipped 25+ Shopify apps covering order automation, tracking, personalization, bundling, and AI-assisted shopping.</p>
+        <p>Before Shopify became my focus, I built large-scale <strong>CRM systems and SaaS platforms</strong>, including a portal used by 300,000+ users across 30,000+ offices nationwide. I care about writing code the next developer can actually read, and shipping things that hold up once real users depend on them.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>Based in</span><span>Lahore, Pakistan</span></div>
+        <div class="fact"><span>Focus</span><span>Shopify Apps · Laravel · Vue/React</span></div>
+        <div class="fact"><span>Experience</span><span>7+ years</span></div>
+        <div class="fact"><span>Education</span><span>B.S. Computer Science</span></div>
+        <div class="fact"><span>Phone</span><span>+92-305-8006777</span></div>
+        <div class="fact"><span>Available for</span><span>Freelance & full-time</span></div>
+      </div>
+    </div>
+  </section>
 
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/laravel.png" alt="Laravel">
-                                                    <p class="skill-title">Laravel</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/vuejs.png" alt="Vue.js">
-                                                    <p class="skill-title">Vue.js</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/reactjs.png" alt="React.js">
-                                                    <p class="skill-title">React.js</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/shopify.png" alt="shopify.js">
-                                                    <p class="skill-title">shopify</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/php.png" alt="PHP">
-                                                    <p class="skill-title">PHP</p>
-                                                </div>
-                                            </li>
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/redux.png" alt="redux.png">
-                                                    <p class="skill-title">Redux</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/vuex.png" alt="vuex">
-                                                    <p class="skill-title">vuex</p>
-                                                </div>
-                                            </li>
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/vuetify.png" alt="vuetify">
-                                                    <p class="skill-title">vuetify</p>
-                                                </div>
-                                            </li>
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/postman.png" alt="postman.png">
-                                                    <p class="skill-title">Postman</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/ionic.png" alt="Ionic">
-                                                    <p class="skill-title">Ionic</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/inertia.png" alt="inertia">
-                                                    <p class="skill-title">inertia</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/mysql.png" alt="mysql">
-                                                    <p class="skill-title">mySql</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/js.png" alt="JS">
-                                                    <p class="skill-title">JavaScript</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/jquery.png" alt="jquery">
-                                                    <p class="skill-title">jQuery</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="image-container">
-                                                    <img src="assets/images/icons/git.png" alt="git">
-                                                    <p class="skill-title">Git</p>
-                                                </div>
-                                            </li>
-
-
-                                        </ul>
-                                    </div>
-                                    <div class="skill-share-inner skill-share-inner-width margin-top-25">
-                                        <span class="title">Secondary Skills on</span>
-                                        <ul class="skill-share d-flex liststyle">
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/angular.png" alt="angular">
-                                                    <p class="sec-skill-title">angular</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/typescript.png" alt="typescript">
-                                                    <p class="sec-skill-title">typescript</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/slack.png" alt="slack">
-                                                    <p class="sec-skill-title">slack</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/bootstrap5.png" alt="bootstrap5">
-                                                    <p class="skill-title">Bootstrap</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/html5.png" alt="html5">
-                                                    <p class="skill-title">html</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/github.png" alt="Github">
-                                                    <p class="sec-skill-title">Github</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/gitlab.png" alt="Gitlab">
-                                                    <p class="sec-skill-title">Gitlab</p>
-                                                </div>
-                                            </li>
-
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/jira.png" alt="jira">
-                                                    <p class="sec-skill-title">Jira</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/json.png" alt="json">
-                                                    <p class="sec-skill-title">JSON</p>
-                                                </div>
-                                            </li>
-
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/css3.png" alt="css3">
-                                                    <p class="sec-skill-title">css</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/powershell.png" alt="powershell">
-                                                    <p class="sec-skill-title">powershell</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/sketch.png" alt="sketch">
-                                                    <p class="sec-skill-title">sketch</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/sass.png" alt="sass">
-                                                    <p class="sec-skill-title">sass</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/vscode.png" alt="vscode">
-                                                    <p class="sec-skill-title">vscode</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/sublime.png" alt="sublime">
-                                                    <p class="sec-skill-title">sublime</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/npm2.png" alt="npm2">
-                                                    <p class="sec-skill-title">npm</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/openai.png" alt="openai">
-                                                    <p class="sec-skill-title">openai</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/firebase.png" alt="firebase">
-                                                    <p class="sec-skill-title">firebase</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/materialui.png" alt="materialui">
-                                                    <p class="sec-skill-title">material ui</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/sveltejs.png" alt="sveltejs">
-                                                    <p class="sec-skill-title">svelte js</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/atlassian.png" alt="atlassian">
-                                                    <p class="sec-skill-title">Atlassian</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="image-item">
-                                                <div class="sec-image-container">
-                                                    <img src="assets/images/icons/bitbucket.png" alt="Bitbucket">
-                                                    <p class="sec-skill-title">Bitbucket</p>
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End skiull area -->
-
-                            <!-- start services area -->
-                            <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="200" data-aos-once="true"
-                                class="rn-skill-area single-card-sticky section-height">
-                                <div class="inner">
-                                    <h5 class="title">
-                                        My Services
-                                    </h5>
-                                    <ul class="card-list">
-                                        <li><a href="#">Website Design and Development <i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Responsive Web Design<i data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">E-commerce Solutions<i data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Content Management Systems<i data-feather="arrow-right"></i></a>
-                                        <li><a href="#">Web Application Development<i
-                                                    data-feather="arrow-right"></i></a>
-                                        <li><a href="#">Custom Web Development<i data-feather="arrow-right"></i></a>
-                                        </li>
-                                        <li><a href="#">Website Maintenance and Support<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Search Engine Optimization (SEO)<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Website Performance Optimization<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Web Hosting and Domain Management<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- End services area -->
-
-                            <!-- start portfolio area -->
-                            <!-- <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="200" data-aos-once="true"
-                                class="rn-portfolio-area single-card-sticky section-height">
-                                <div class="inner">
-                                    <h5 class="title">
-                                        My Portfolio
-                                    </h5>
-                                    <ul class="card-list">
-                                        <li><a href="#">Provite for Design & Development <i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Network is intangible in nature<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Team frequently in retailing<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Service to a customer.<i data-feather="arrow-right"></i></a>
-                                        </li>
-
-
-                                    </ul>
-                                </div>
-                            </div> -->
-                            <!-- End portfolio area -->
-
-                            <!-- start blog area -->
-                            <!-- <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="200" data-aos-once="true"
-                                class="rn-blog-area single-card-sticky section-height">
-                                <div class="inner">
-                                    <h5 class="title">
-                                        My Blog
-                                    </h5>
-                                    <ul class="card-list">
-                                        <li><a href="#">Ervice refers to quality<i data-feather="arrow-right"></i></a>
-                                        </li>
-                                        <li><a href="#">Service is intangible in nature<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Occurs frequently in retailing<i
-                                                    data-feather="arrow-right"></i></a></li>
-                                        <li><a href="#">Provided to a customer.<i data-feather="arrow-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
-                            <!-- End blog area -->
-
-                            <!-- start testimonial area -->
-                            <!-- <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="200" data-aos-once="true"
-                                class="rn-testimonial-area testimonial-style-2 section-height">
-                                <div class="inner">
-                                    <h5 class="title">
-                                        Testimonial
-                                    </h5>
-                                    <div
-                                        class="rn-testimonial-carousel testimonial-item-one rn-slick-dot-style dot-position-left slick-arrow-style-one arrow-top-align">
-
-                                        <div class="testimonial-inner">
-                                            <div class="testimonial-header">
-                                                <div class="thumbnail">
-                                                    <img src="assets/images/client/testimonial-1.jpg"
-                                                        alt="client-image">
-                                                </div>
-                                                <h5 class="ts-header">
-                                                    <span class="text-color-primary">@Rafi Group</span>
-                                                </h5>
-                                            </div>
-                                            <div class="testimonial-body">
-                                                <p class="discription">
-                                                    Talal's expertise and dedication were instrumental in bringing our
-                                                    website project to life. His attention to detail, problem-solving
-                                                    skills,
-                                                    and timely communication ensured a seamless development process.
-                                                    Thanks to his efforts, we saw a significant improvement in website
-                                                    performance and user engagement.
-                                                    I highly recommend <span>@Talal</span> for any web development</p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-inner">
-                                            <div class="testimonial-header">
-                                                <div class="thumbnail">
-                                                    <img src="assets/images/client/testimonial-2.jpg"
-                                                        alt="client-image">
-                                                </div>
-                                                <h5 class="ts-header">
-                                                    <span class="text-color-primary">@Nipa Tech</span>
-                                                </h5>
-                                            </div>
-                                            <div class="testimonial-body">
-                                                <p class="discription">
-                                                    Working with Talal was an absolute pleasure.
-                                                    His expertise in web development shone through as he transformed our
-                                                    website into a sleek, user-friendly platform.
-                                                    His attention to detail and proactive communication made the entire
-                                                    process smooth and efficient.
-                                                    We're thrilled with the results and look forward to collaborating
-                                                    with <span>@Talal</span> on future projects..
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-inner">
-                                            <div class="testimonial-header">
-                                                <div class="thumbnail">
-                                                    <img src="assets/images/client/testimonial-3.jpg"
-                                                        alt="client-image">
-                                                </div>
-                                                <h5 class="ts-header">
-                                                    <span class="text-color-primary">@Client</span>
-                                                </h5>
-                                            </div>
-                                            <div class="testimonial-body">
-                                                <p class="discription">I can't thank Talal enough for his exceptional
-                                                    work on our website redesign.
-                                                    From the initial concept to the final launch, he demonstrated a deep
-                                                    understanding of web development principles and a keen eye for
-                                                    design.
-                                                    He was responsive to our feedback and consistently delivered results
-                                                    that aligned with our vision.
-                                                    Talal's expertise and commitment to excellence made him an
-                                                    invaluable asset to our project,
-                                                    and I wouldn't hesitate to work with him again in the future.</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- End testimonial area -->
-
-                            <!-- Start contact area -->
-                            <!-- <div data-aos="fade-left" data-aos-duration="500" data-aos-delay="200" data-aos-once="true"
-                                class="rn-contact-area section-height">
-                                <div class="inner">
-                                    <h5 class="title">
-                                        Contact With Me
-                                    </h5>
-                                    <div class="contact-form-wrapper">
-                                        <div class="introduce">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-xl-6">
-                                                    <div class="form-group">
-                                                        <label for="name">Your Name</label>
-                                                        <input class="form-control form-control-lg" name="name"
-                                                            id="name" type="text">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-12 col-xl-6">
-                                                    <div class="form-group">
-                                                        <label for="phone">Phone Number</label>
-                                                        <input class="form-control" name="phone" id="phone" type="text">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="email">Email</label>
-                                                        <input class="form-control form-control-sm" id="email"
-                                                            name="email" type="email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="subject">subject</label>
-                                                        <input class="form-control form-control-sm" id="subject"
-                                                            name="subject" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <label for="message">Your Message</label>
-                                                        <textarea name="message" id="message" cols="30"
-                                                            rows="10"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <a href="#" class="rn-btn">
-                                                        <span>SEND MESSAGE</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-arrow-right">
-                                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- End contact area -->
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section id="skills">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skill-groups" style="margin-top:40px;">
+      <div class="skill-group">
+        <h4>LANGUAGES & FRAMEWORKS</h4>
+        <div class="pills">
+          <span class="pill">PHP</span><span class="pill">Laravel</span><span class="pill">CodeIgniter</span>
+          <span class="pill">Vue.js</span><span class="pill">React</span><span class="pill">Inertia.js</span>
+          <span class="pill">Angular JS</span><span class="pill">Vuetify / Vuex</span><span class="pill">Redux</span>
+          <span class="pill">jQuery</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Bootstrap</span>
         </div>
-        <!-- End slider area -->
-
-        <!-- Back to  top Start -->
-        <div class="backto-top">
-            <div>
-                <i data-feather="arrow-up"></i>
-            </div>
+      </div>
+      <div class="skill-group">
+        <h4>E-COMMERCE, APIS & TOOLS</h4>
+        <div class="pills">
+          <span class="pill">Shopify (Liquid, Polaris, Webhooks)</span><span class="pill">Google Merchant Center</span>
+          <span class="pill">REST APIs</span><span class="pill">GraphQL</span><span class="pill">MySQL</span><span class="pill">AWS</span>
         </div>
-        <!-- Back to top end -->
+      </div>
+      <div class="skill-group">
+        <h4>TOOLING</h4>
+        <div class="pills">
+          <span class="pill">Git</span><span class="pill">Postman</span><span class="pill">Jira</span><span class="pill">Trello</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>DESIGN</h4>
+        <div class="pills">
+          <span class="pill">Figma</span><span class="pill">GIMP</span><span class="pill">Visual Paradigm</span><span class="pill">UI/UX Prototyping</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </main>
-    <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.js"></script>
-    <script src="assets/js/vendor/text-type.js"></script>
-    <script src="assets/js/vendor/wow.js"></script>
-    <script src="assets/js/vendor/aos.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+  <section id="experience">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline" style="margin-top:40px;">
+      <div class="tl-item">
+        <div class="tl-date">Jun 2025 — Present</div>
+        <h3>Lead Shopify App Developer</h3>
+        <span class="role-co">Misk Logics Apps</span>
+        <p>Shopify app product-based company. Lead development on 6 published apps, continuously maintained and improved based on merchant feedback — covering order export automation, product/variant options, bulk fulfillment, order tracking, and Google Shopping feed integration.</p>
+        <a href="https://apps.shopify.com/partners/misk-logics" target="_blank" class="tl-link">View apps on the Shopify App Store ↗</a>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jul 2023 — Present</div>
+        <h3>Shopify App Developer</h3>
+        <span class="role-co">SwishTag</span>
+        <p>Built 20+ Shopify apps — public and custom, embedded and non-embedded — across diverse merchant niches worldwide, including bidding/auction commerce, custom logistics, AI-assisted shopping, and UGC-driven marketing.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jun 2020 — Jun 2023</div>
+        <h3>Full-Stack Web Developer</h3>
+        <span class="role-co">The Tech Teams</span>
+        <p>Built a CRM and web portal from scratch for a US-based company, unifying reporting, attendance, notifications, maps, and alerts across 18+ departments. Supported 300,000+ users across 30,000+ offices nationwide, built with Vue.js, Vuetify, Laravel, and Laravel Lumen.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Apr 2021 — Aug 2022</div>
+        <h3>Web Developer</h3>
+        <span class="role-co">Tech Bridge Consultancy</span>
+        <p>Delivered 6+ SaaS products, including a restaurant management system (POS, order management, advance booking, delivery dispatch) and a B2B ordering portal for a South African barber-supply company with in-app chat, voice/video calls, and live inventory tracking.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jun 2018 — Feb 2020</div>
+        <h3>UI/UX & Hybrid App Developer</h3>
+        <span class="role-co">65work</span>
+        <p>Designed UI/UX and built prototypes for 6+ hybrid apps — including a salon/spa app (UAE), tutoring, pet marketplace with vet support, taxi booking, and expense tracker — using Ionic, Angular JS, and Figma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Selected Work</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-sub" style="margin-top:20px;">Organized by where each project was built. Misk Logics apps are live and public — click through to see them. SwishTag and enterprise work is under client/employer NDA, summarized here without proprietary screenshots.</p>
+
+    <!-- MISK LOGICS -->
+    <div class="work-group">
+      <div class="work-group-head">
+        <h3>Misk Logics Apps</h3>
+        <span class="work-group-tag">● Live on Shopify App Store</span>
+      </div>
+      <p class="work-group-note">Product-based Shopify app company — 6 published apps I lead development on.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="top-row">
+            <h4>Smart Order Export Pro</h4>
+            <div class="links"><a href="https://apps.shopify.com/misk-smart-order-export-pro" target="_blank">View ↗</a></div>
+          </div>
+          <p>Smart CSV & Excel order export with custom fields, delivered via email and Google Sheets.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">CSV/Excel</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row">
+            <h4>Variant & Product Options</h4>
+            <div class="links"><a href="https://apps.shopify.com/misk-smart-product-options" target="_blank">View ↗</a></div>
+          </div>
+          <p>Multiple variant/product option types with conditional logic, for merchants needing flexible product configuration.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Liquid</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row">
+            <h4>Smart Bulk Fulfillment</h4>
+            <div class="links"><a href="https://apps.shopify.com/misk-smart-bulk-fulfillment" target="_blank">View ↗</a></div>
+          </div>
+          <p>Makes order fulfillment and tracking faster and easier for merchants handling high order volumes.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Fulfillment</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row">
+            <h4>Google Shopping Feed</h4>
+            <div class="links"><a href="https://apps.shopify.com/misk-smart-product-feed-app" target="_blank">View ↗</a></div>
+          </div>
+          <p>Smarter, always-in-sync product feeds connecting merchant catalogs to Google Shopping.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Google Merchant</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row">
+            <h4>Parcel Order Tracking Pro</h4>
+            <div class="links"><a href="https://apps.shopify.com/order-tracker-5" target="_blank">View ↗</a></div>
+          </div>
+          <p>Real-time order tracking with customizable status updates and a branded tracking experience.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Tracking</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row">
+            <h4>Store Export</h4>
+            <div class="links"><a href="https://apps.shopify.com/misk-store-export" target="_blank">View ↗</a></div>
+          </div>
+          <p>Import and export full store data via CSV and Excel — built for merchants migrating or backing up catalogs.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Data</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SWISHTAG -->
+    <div class="work-group">
+      <div class="work-group-head">
+        <h3>SwishTag</h3>
+        <span class="work-group-tag" style="color:var(--muted); background:rgba(136,145,163,0.1);">NDA — summarized</span>
+      </div>
+      <p class="work-group-note">Public and custom Shopify apps built for merchants across diverse niches worldwide.</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="top-row"><h4>Bidding App</h4></div>
+          <p>Merchants list a product for bidding; it auto-sells to the highest bidder once the timer expires. Fully automated — increased store sales by up to 30%.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Auctions</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>Movo</h4></div>
+          <p>Custom logistics app for a Milan-based reusable-packaging company, expanding worldwide. Auto-generates orders as merchant inventory runs low, produces reports, handles bag returns, and integrates maps so merchants can find nearby drop-off points.</p>
+          <div class="tag-row"><span class="tag">Custom</span><span class="tag">Logistics</span><span class="tag">Maps</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>Bundilo</h4></div>
+          <p>A suite of conversion apps: Bundle Builder (discounted product bundles), My Deal of the Day (rotating daily deals), and Progressify (multi-bar upsell progress bars that gamify cart value).</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Public</span><span class="tag">Upsells</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>PulseChat</h4></div>
+          <p>AI shopping assistant powered by the ChatGPT API — asks customers what they need and recommends products conversationally instead of relying on search or filters.</p>
+          <div class="tag-row"><span class="tag">ChatGPT API</span><span class="tag">AI</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>TrackiShip</h4></div>
+          <p>Customer order tracking without exposing real carrier tracking numbers. Shop owners can customize estimated dates, text, and styling — works immediately after install, no code required.</p>
+          <div class="tag-row"><span class="tag">Shopify</span><span class="tag">Tracking</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>Vidial</h4></div>
+          <p>Automatically collects UGC video testimonials — emails customers post-delivery with customizable questions, then lets merchants review, download, and reward customers with gift cards.</p>
+          <div class="tag-row"><span class="tag">UGC</span><span class="tag">Video</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>Flawless</h4></div>
+          <p>Custom app for a jewelry shop to let customers configure product options — materials, engravings, and sizing — directly on the product page.</p>
+          <div class="tag-row"><span class="tag">Custom</span><span class="tag">Product Options</span></div>
+        </div>
+        <div class="project-card">
+          <div class="top-row"><h4>Portelle</h4></div>
+          <p>Non-embedded custom app for a US-based business, centralizing all their merchants in one place. The consolidation idea worked well — sales increased notably after launch.</p>
+          <div class="tag-row"><span class="tag">Custom</span><span class="tag">Non-embedded</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="work-group">
+      <div class="work-group-head">
+        <h3>Enterprise & Full-Stack Projects</h3>
+        <span class="work-group-tag" style="color:var(--muted); background:rgba(136,145,163,0.1);">NDA — summarized</span>
+      </div>
+      <p class="work-group-note">CRM, SaaS, and hybrid-app work from earlier roles.</p>
+      <div class="projects-grid cols-2">
+        <div class="project-card">
+          <div class="project-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="16" r="5" fill="#c98a46"/>
+              <circle cx="14" cy="42" r="5" stroke="#8891a3" stroke-width="2" fill="#12141a"/>
+              <circle cx="32" cy="48" r="5" stroke="#8891a3" stroke-width="2" fill="#12141a"/>
+              <circle cx="50" cy="42" r="5" stroke="#8891a3" stroke-width="2" fill="#12141a"/>
+              <line x1="32" y1="21" x2="16" y2="38" stroke="#2a2f3b" stroke-width="2"/>
+              <line x1="32" y1="21" x2="32" y2="43" stroke="#2a2f3b" stroke-width="2"/>
+              <line x1="32" y1="21" x2="48" y2="38" stroke="#2a2f3b" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="top-row"><h4>Enterprise CRM & Reporting Portal</h4></div>
+          <p>Built from scratch for a US-based company, unifying reporting, attendance, notifications, maps, and alerts across 18+ departments — scaled to 300,000+ users across 30,000+ offices, built with Vue.js, Vuetify, Laravel, and Laravel Lumen.</p>
+          <div class="tag-row"><span class="tag">Vue.js</span><span class="tag">Laravel</span><span class="tag">Lumen</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 10h28v42l-4-3-4 3-4-3-4 3-4-3-4 3-4-3-4 3z" stroke="#8891a3" stroke-width="2"/>
+              <line x1="24" y1="20" x2="40" y2="20" stroke="#c98a46" stroke-width="2"/>
+              <line x1="24" y1="28" x2="40" y2="28" stroke="#2a2f3b" stroke-width="2"/>
+              <line x1="24" y1="36" x2="34" y2="36" stroke="#2a2f3b" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="top-row"><h4>Restaurant Management System</h4></div>
+          <p>Full POS, order management, advance booking, and delivery dispatch system built for restaurant clients, helping increase sales through streamlined operations.</p>
+          <div class="tag-row"><span class="tag">Laravel</span><span class="tag">React</span><span class="tag">MySQL</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="22" width="18" height="18" rx="2" stroke="#8891a3" stroke-width="2"/>
+              <rect x="40" y="22" width="18" height="18" rx="2" stroke="#8891a3" stroke-width="2"/>
+              <line x1="26" y1="31" x2="38" y2="31" stroke="#2a2f3b" stroke-width="2"/>
+              <path d="M35 27l4 4-4 4" stroke="#c98a46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 8h14v10l-4-2h-10z" fill="#c98a46"/>
+            </svg>
+          </div>
+          <div class="top-row"><h4>B2B Ordering Portal</h4></div>
+          <p>Built for a South African barber-supply company with in-app chat, voice/video calls, and live inventory tracking to streamline bulk ordering between businesses.</p>
+          <div class="tag-row"><span class="tag">React</span><span class="tag">REST APIs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="6" width="24" height="42" rx="3" stroke="#8891a3" stroke-width="2"/>
+              <line x1="26" y1="14" x2="38" y2="14" stroke="#2a2f3b" stroke-width="2"/>
+              <rect x="25" y="20" width="14" height="10" rx="1" stroke="#c98a46" stroke-width="2"/>
+              <line x1="26" y1="36" x2="38" y2="36" stroke="#2a2f3b" stroke-width="2"/>
+              <circle cx="32" cy="43" r="1.6" fill="#c98a46"/>
+            </svg>
+          </div>
+          <div class="top-row"><h4>Hybrid App Prototypes</h4></div>
+          <p>UI/UX design and prototypes across 6+ hybrid apps — salon/spa booking (UAE), tutoring, pet marketplace with vet support, taxi booking, and expense tracking.</p>
+          <div class="tag-row"><span class="tag">Ionic</span><span class="tag">Angular JS</span><span class="tag">Figma</span></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <div class="eyebrow" style="justify-content:center;">05 · GET IN TOUCH</div>
+      <h2>Let's build something.</h2>
+      <p>Open to freelance projects and full-time roles. The fastest way to reach me is email — I'll get back within a day.</p>
+      <a href="mailto:talal.techpro@gmail.com" class="btn btn-primary">talal.techpro@gmail.com</a>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/techpro-talal/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/ChTalalJamil" target="_blank">GitHub</a>
+        <a href="docs/resume.pdf" download="Talal_Ahmed_Resume.pdf">Resume</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>© 2026 Talal Ahmed — built with Laravel-brain, styled by hand.</footer>
+
+<script>
+  // mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const navlinks = document.getElementById('navlinks');
+  toggle.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  // hero "systems diagram" animation — nodes + connecting lines, pulsing
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes = [];
+  const NODE_COUNT = 26;
+  const MAX_DIST = 160;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+
+  function initNodes(){
+    nodes = Array.from({length: NODE_COUNT}, () => ({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      vx: (Math.random()-0.5)*0.25,
+      vy: (Math.random()-0.5)*0.25,
+      r: Math.random()*1.5 + 1.2,
+      pulse: Math.random()*Math.PI*2
+    }));
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const a = nodes[i], b = nodes[j];
+        const dx = a.x-b.x, dy = a.y-b.y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if(dist < MAX_DIST){
+          ctx.strokeStyle = `rgba(201,138,70,${(1 - dist/MAX_DIST)*0.15})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x,a.y);
+          ctx.lineTo(b.x,b.y);
+          ctx.stroke();
+        }
+      }
+    }
+    nodes.forEach(n=>{
+      n.pulse += 0.02;
+      const glow = 0.5 + Math.sin(n.pulse)*0.5;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r + glow*0.8, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(201,138,70,${0.35 + glow*0.35})`;
+      ctx.fill();
+      if(!reducedMotion){
+        n.x += n.vx; n.y += n.vy;
+        if(n.x < 0 || n.x > w) n.vx *= -1;
+        if(n.y < 0 || n.y > h) n.vy *= -1;
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  initNodes();
+  draw();
+</script>
+
 </body>
-
 </html>
